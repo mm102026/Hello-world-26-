@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{margin:0;height:100vh;display:grid;place-items:center;background:radial-gradient(#35105a,#090014);color:orange;font-family:Arial;overflow:hidden;text-align:center}
+h1{font-size:3em;text-shadow:0 0 20px orange;animation:pulse 2s infinite}
+.ghost{position:absolute;font-size:3em;animation:float 6s infinite ease-in-out}
+@keyframes pulse{50%{text-shadow:0 0 40px red}}
+@keyframes float{50%{transform:translateY(-80px) rotate(15deg)}}
+button{padding:14px;border:0;border-radius:12px;background:orange;cursor:pointer;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="ghost" style="left:10%;top:20%">👻</div>
+<div class="ghost" style="right:12%;top:60%;animation-delay:2s">🦇</div>
+<div>
+<h1>🎃 Boo! Halloween 🎃</h1>
+<p id="msg">Something spooky is lurking...</p>
+<button onclick="document.getElementById('msg').textContent=['👻 BOO!','🧙 You are cursed!','🎃 Trick or treat!','🕷️ Run...'][Math.floor(Math.random()*4)]">Dare to Click?</button>
+</div>
+<script>
+setInterval(()=>{document.body.style.background=`radial-gradient(#${Math.floor(Math.random()*5+1)}105a,#090014)`},2500);
+</script>
+</body>
+</html>
